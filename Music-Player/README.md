@@ -4,8 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Setup and Start Application
 
+```
 $ npm install
 $ npm run start-app
+
+```
 
 ## Development server
 
