@@ -1,0 +1,5 @@
+:host {
+  display: grid;
+  height: -webkit-fill-available;
+  grid-template-rows: auto auto 1fr auto;
+}
