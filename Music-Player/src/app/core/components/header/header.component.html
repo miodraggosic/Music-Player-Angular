@@ -1,1 +1,9 @@
-<p>header works!</p>
+<header>
+  <mat-toolbar color="secondary">
+    <span>{{title | uppercase}}</span>
+    <nav>
+      <a mat-stroked-button color="accent" *ngFor="let link of navLinks" [routerLink]="[link.path]">{{link.name}}
+      </a>
+    </nav>
+  </mat-toolbar>
+</header>
