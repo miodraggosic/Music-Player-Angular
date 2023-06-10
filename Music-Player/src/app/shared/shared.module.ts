@@ -7,7 +7,9 @@ import { MatInputModule } from '@angular/material/input';
 
 import { SearchComponent } from './components/search/search.component';
 
-const COMPONENTS = [SearchComponent];
+import { FullNamePipe } from './pipes/full-name.pipe';
+
+const COMPONENTS = [SearchComponent, FullNamePipe];
 
 @NgModule({
   declarations: [...COMPONENTS],
