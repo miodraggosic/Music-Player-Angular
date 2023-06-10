@@ -1,4 +1,63 @@
 {
   "users": [],
-  "songs": []
+  "songs": [
+    {
+      "id": 1,
+      "name": "Firestarter",
+      "videoUrl": "https://youtu.be/Hb9hvRSEel8?t=8",
+      "description": "string",
+      "author": {
+        "name": "Band",
+        "lastName": "Prodigy"
+      },
+      "duration": "03:46",
+      "datePublished": "2023-05-18T06:39:26.703Z"
+    },
+    {
+      "id": 2,
+      "name": "Move on Up",
+      "videoUrl": "https://youtu.be/iN3KsbnQZxU",
+      "description": "string",
+      "author": {
+        "name": "Curtis",
+        "lastName": "Mayfield"
+      },
+      "duration": "08:55",
+      "datePublished": "2023-05-18T06:39:26.703Z"
+    },
+    {
+      "id": 3,
+      "name": "Pusherman",
+      "videoUrl": "https://youtu.be/sv2fTk1RSS0",
+      "description": "string",
+      "author": {
+        "name": "Curtis",
+        "lastName": "Mayfield"
+      },
+      "duration": "05:00",
+      "datePublished": "2023-05-18T06:39:26.703Z"
+    }
+  ],
+  "navLinks": [
+    {
+      "id": 1,
+      "name": "Home",
+      "path": ""
+    },
+    {
+      "id": 2,
+      "name": "Admin",
+      "path": "admin"
+    },
+    {
+      "id": 3,
+      "name": "Login",
+      "path": "login"
+    },
+    {
+      "id": 4,
+      "name": "SignUp",
+      "path": "signup"
+    }
+  ]
 }
