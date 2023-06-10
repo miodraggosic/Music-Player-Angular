@@ -1,6 +1,7 @@
 export interface Song {
+  id?: number;
   name: string;
-  url: string;
+  videoUrl: string;
   description: string;
   author: Author;
   duration: string;
