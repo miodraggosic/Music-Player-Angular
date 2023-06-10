@@ -1,1 +1,17 @@
-<p>song works!</p>
+<app-song-card *ngIf="song">
+  <ng-container title>
+    <a mat-button color="warn" [routerLink]="[song.id]">
+      {{song.name | titlecase}}
+    </a>
+  </ng-container>
+  <video video controls [src]="song.videoUrl">
+  </video>
+  <ng-container author>
+    <p>{{song.description}}</p>
+    <p>{{song.author}}</p>
+  </ng-container>
+  <ng-container info>
+    <p>{{song.duration }}</p>
+    <p>{{song.datePublished | date}}</p>
+  </ng-container>
+</app-song-card>
