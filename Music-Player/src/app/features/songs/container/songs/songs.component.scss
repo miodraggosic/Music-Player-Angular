@@ -1,0 +1,9 @@
+:host {
+  background: #365c467a;
+
+  .songs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

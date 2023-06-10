@@ -1,1 +1,6 @@
-<p>songs works!</p>
+<div class="search">
+  <app-search (searchTerm)="onSearchTerm($event)"></app-search>
+</div>
+<div class="songs-container">
+  <app-song *ngFor="let song of songs" [song]="song"></app-song>
+</div>
