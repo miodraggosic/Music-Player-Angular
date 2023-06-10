@@ -5,9 +5,9 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
-import { HeaderComponent } from './components/header/header.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
+import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
@@ -22,6 +22,5 @@ const COMPONENTS = [
 @NgModule({
   declarations: [...COMPONENTS],
   imports: [CommonModule, RouterModule, MatToolbarModule, MatButtonModule],
-  exports: [...COMPONENTS],
 })
 export class CoreModule {}
