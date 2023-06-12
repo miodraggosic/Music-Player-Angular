@@ -1,4 +1,4 @@
-<ng-container *ngIf="song | async as song">
+<ng-container *ngIf="(song$ | async) as song">
   <app-song-card>
     <ng-container title>
       <a mat-button color="warn">

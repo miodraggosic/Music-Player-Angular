@@ -10,7 +10,7 @@ import { Song } from '@models/interfaces/song.interface';
   styleUrls: ['./song-details.component.scss'],
 })
 export class SongDetailsComponent implements OnInit {
-  song!: Observable<Song>;
+  song$!: Observable<Song>;
 
   private songId!: number;
 
@@ -20,7 +20,7 @@ export class SongDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.song = this.getSong();
+    this.song$ = this.getSong();
   }
 
   private getSong(): Observable<Song> {
