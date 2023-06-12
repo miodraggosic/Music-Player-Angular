@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeLayoutComponent } from './core/layouts/home-layout/home-layout.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
+import { UserLayoutComponent } from './core/layouts/user-layout/user-layout.component';
+import { LoginComponent } from './core/auth/components/login/login.component';
+import { SignupComponent } from './core/auth/components/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,21 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'user',
+    component: UserLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'signup',
+        component: SignupComponent,
+      },
+    ],
+  },
+
   {
     path: '**',
     component: PageNotFoundComponent,
