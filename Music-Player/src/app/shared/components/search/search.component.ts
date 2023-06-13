@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable, debounceTime, distinctUntilChanged, take } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -16,11 +16,21 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('init');
+    this.updateSearch();
+  }
 
+  private updateSearch() {
     this.search.valueChanges
-      .pipe(debounceTime(2000), distinctUntilChanged())
+      .pipe(
+        debounceTime(2000),
+        map((value: string) => value.trim()),
+        distinctUntilChanged()
+      )
       .subscribe((term) => {
-        console.log('call'), this.searchTerm.emit(term);
+        console.log(term);
+        if (term) {
+          this.searchTerm.emit(term);
+        }
       });
   }
 }
