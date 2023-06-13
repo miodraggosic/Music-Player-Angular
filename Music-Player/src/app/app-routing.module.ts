@@ -7,6 +7,8 @@ import { UserLayoutComponent } from './core/layouts/user-layout/user-layout.comp
 import { LoginComponent } from './core/auth/components/login/login.component';
 import { SignupComponent } from './core/auth/components/signup/signup.component';
 
+import { AdminGuard } from './core/auth/guards/admin.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +26,7 @@ const routes: Routes = [
       },
       {
         path: 'admin',
+        canLoad: [AdminGuard],
         loadChildren: () =>
           import('./features/admin/admin.module').then((m) => m.AdminModule),
       },
