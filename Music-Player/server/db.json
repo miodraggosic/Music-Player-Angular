@@ -1,5 +1,22 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "gosmio88@gmail.com",
+      "password": "$2a$10$WOsZ9/MtLAEDyfS5tw/mSueY7N.RVGntjowYwpuvzbq3cNW9TDQeS",
+      "firstName": "Miodrag",
+      "lastName": "Gosic",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "email": "mile@gmail.co",
+      "password": "$2a$10$TsBHnipC4aG5KGiZqmtpbedW3u7vswhY..ryAMwbx9BMibub7s24i",
+      "firstName": "Miki",
+      "lastName": "Mile",
+      "role": "admin",
+      "id": 2
+    }
+  ],
   "songs": [
     {
       "id": 1,
@@ -52,12 +69,12 @@
     {
       "id": 3,
       "name": "Login",
-      "path": "login"
+      "path": "../user/login"
     },
     {
       "id": 4,
       "name": "SignUp",
-      "path": "signup"
+      "path": "../user/signup"
     }
   ]
 }
