@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '@env';
 import { Login, SignUp, User } from '@models/interfaces/user.interface';
-import { Observable, map } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { AuthStorageService } from './auth-storage.service';
 
 @Injectable({
@@ -38,7 +38,7 @@ export class AuthService {
     return this.http
       .post<User>(`${environment.baseApiUrl}users`, createUser)
       .pipe(
-        map((res: any) => {
+        tap((res: any) => {
           console.log(res);
           if (res) {
             this.router.navigateByUrl('user/login');
@@ -46,18 +46,23 @@ export class AuthService {
         })
       );
   }
-  isAdmin() {
+
+  logout(): void {
+    this.authStorage.removeUser();
+  }
+
+  isAdmin(): boolean {
     const userRole = this.authStorage.getUserRole();
     console.log(userRole);
 
     return userRole === 'admin' ? true : false;
   }
 
-  isAuthentifaced(): boolean {
+  isAuthenticated(): boolean {
     return this.authStorage.getUserId() !== null;
   }
 
-  getUserToken() {
+  getUserToken(): string {
     return this.authStorage.getUserToken();
   }
 }
