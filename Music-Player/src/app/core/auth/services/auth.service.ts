@@ -4,12 +4,17 @@ import { Router } from '@angular/router';
 import { environment } from '@env';
 import { Login, SignUp, User } from '@models/interfaces/user.interface';
 import { Observable, map } from 'rxjs';
+import { AuthStorageService } from './auth-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private authStorage: AuthStorageService
+  ) {}
 
   login(user: Login): Observable<boolean> {
     console.log(user);
@@ -17,6 +22,9 @@ export class AuthService {
       map((res: any) => {
         console.log(res);
         if (res) {
+          this.authStorage.storeUser(res);
+          console.log(this.isAdmin());
+
           this.router.navigateByUrl('');
           return true;
         }
@@ -26,13 +34,30 @@ export class AuthService {
   }
 
   signUp(user: SignUp) {
-    return this.http.post<User>(`${environment.baseApiUrl}users`, user).pipe(
-      map((res: any) => {
-        console.log(res);
-        if (res) {
-          this.router.navigateByUrl('user/login');
-        }
-      })
-    );
+    const createUser: User = this.authStorage.createUser(user);
+    return this.http
+      .post<User>(`${environment.baseApiUrl}users`, createUser)
+      .pipe(
+        map((res: any) => {
+          console.log(res);
+          if (res) {
+            this.router.navigateByUrl('user/login');
+          }
+        })
+      );
+  }
+  isAdmin() {
+    const userRole = this.authStorage.getUserRole();
+    console.log(userRole);
+
+    return userRole === 'admin' ? true : false;
+  }
+
+  isAuthentifaced(): boolean {
+    return this.authStorage.getUserId() !== null;
+  }
+
+  getUserToken() {
+    return this.authStorage.getUserToken();
   }
 }
