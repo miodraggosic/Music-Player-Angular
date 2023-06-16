@@ -27,7 +27,6 @@ export class SearchComponent implements OnInit {
         distinctUntilChanged()
       )
       .subscribe((term) => {
-        console.log(term);
         if (term) {
           this.searchTerm.emit(term);
         }
