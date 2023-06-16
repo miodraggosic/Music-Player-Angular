@@ -7,7 +7,7 @@
   <video video controls [src]="song.videoUrl">
   </video>
   <ng-container author>
-    <p>{{song.description}}</p>
+    <p>{{song.description | textLength}}</p>
     <p>{{song.author | fullName}}</p>
   </ng-container>
   <ng-container info>
