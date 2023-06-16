@@ -15,11 +15,11 @@ export class SongsService {
 
   getAllSongs(): Observable<Song[]> {
     return this.http.get<Song[]>(this.songsUrl).pipe(
-      map((data) => {
-        data.map((song) => (song.videoUrl = this.sanitazeUrl(song.videoUrl)));
-        console.log(data);
-        return data;
-      }),
+      // map((data) => {
+      //   data.map((song) => (song.videoUrl = this.sanitazeUrl(song.videoUrl)));
+      //   console.log(data);
+      //   return data;
+      // }),
       retry(2)
     );
   }
@@ -32,6 +32,17 @@ export class SongsService {
     return this.http
       .get<Song[]>(`${this.songsUrl}?name_like=${term}`)
       .pipe(retry(2));
+  }
+
+  delete(id: number): Observable<Song> {
+    return this.http.delete<Song>(`${this.songsUrl}/${id}`).pipe(retry(2));
+  }
+  update(id: number, song: Song): Observable<Song> {
+    return this.http.patch<Song>(`${this.songsUrl}/${id}`, song).pipe(retry(2));
+  }
+
+  add(song: Song): Observable<Song> {
+    return this.http.post<Song>(`${this.songsUrl}`, song).pipe(retry(2));
   }
 
   private sanitazeUrl(url: string) {
