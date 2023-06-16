@@ -6,6 +6,6 @@ import { Author } from '@models/interfaces/song.interface';
 })
 export class FullNamePipe implements PipeTransform {
   transform(value: Author): string {
-    return `${value.name} ${value.lastName}`;
+    return `${value.firstName} ${value.lastName}`;
   }
 }

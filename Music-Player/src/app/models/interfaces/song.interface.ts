@@ -9,6 +9,6 @@ export interface Song {
 }
 
 export interface Author {
-  name: string;
+  firstName: string;
   lastName: string;
 }
