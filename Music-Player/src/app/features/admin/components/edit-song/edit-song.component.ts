@@ -1,7 +1,7 @@
-import { take, Observable, tap } from 'rxjs';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Song } from '@models/interfaces/song.interface';
+import { Observable, take } from 'rxjs';
 import { SongsService } from 'src/app/features/songs/services/songs.service';
 
 @Component({
@@ -10,10 +10,8 @@ import { SongsService } from 'src/app/features/songs/services/songs.service';
   styleUrls: ['./edit-song.component.scss'],
 })
 export class EditSongComponent implements OnInit {
-  songToUpdate!: Observable<Song>;
-
+  songToUpdate$!: Observable<Song>;
   song!: Song;
-
   songId!: number;
 
   constructor(
@@ -24,13 +22,13 @@ export class EditSongComponent implements OnInit {
   ngOnInit(): void {
     this.getSong();
   }
+
   getSong() {
     this.getRouteId();
-    this.songToUpdate = this.songsService.getById(this.songId);
+    this.songToUpdate$ = this.songsService.getById(this.songId);
   }
-  updateSong(event: Song) {
-    console.log(event);
 
+  updateSong(event: Song) {
     this.songsService
       .update(this.songId, event)
       .pipe(take(1))
