@@ -8,6 +8,7 @@ import { LoginComponent } from './core/auth/components/login/login.component';
 import { SignupComponent } from './core/auth/components/signup/signup.component';
 
 import { AdminGuard } from './core/auth/guards/admin.guard';
+import { AuthGuard } from './core/auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -38,10 +39,12 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
+        canActivate: [AuthGuard],
         component: LoginComponent,
       },
       {
         path: 'signup',
+        canActivate: [AuthGuard],
         component: SignupComponent,
       },
     ],
