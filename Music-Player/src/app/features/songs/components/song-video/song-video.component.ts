@@ -10,6 +10,10 @@ export class SongVideoComponent implements OnInit {
 
   songId!: string;
 
+  playerVars = {
+    origin: 'http://localhost:4200',
+  };
+
   constructor() {}
 
   ngOnInit(): void {
@@ -17,7 +21,6 @@ export class SongVideoComponent implements OnInit {
   }
 
   getSongId() {
-    console.log(this.videoUrl);
     this.songId = this.videoUrl.split('v=')[1].split('&')[0];
   }
 }
