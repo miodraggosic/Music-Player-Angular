@@ -7,6 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AddSongComponent } from './components/add-song/add-song.component';
 import { TableComponent } from './components/table/table.component';
@@ -33,6 +34,7 @@ const COMPONENTS = [
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSliderModule,
     ReactiveFormsModule,
     SharedModule,
   ],
