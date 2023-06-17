@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SongsService } from '../../services/songs.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { Song } from '@models/interfaces/song.interface';
+import { Observable } from 'rxjs';
+import { SongsService } from '../../services/songs.service';
 
 @Component({
   selector: 'app-song-details',
@@ -20,6 +20,7 @@ export class SongDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.songsService.initYtApi();
     this.song$ = this.getSong();
   }
 
