@@ -15,6 +15,7 @@ export class SongsComponent implements OnInit {
   constructor(private songsService: SongsService) {}
 
   ngOnInit(): void {
+    this.songsService.initYtApi();
     this.getAllSongs();
   }
 

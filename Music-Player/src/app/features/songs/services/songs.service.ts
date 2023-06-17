@@ -3,13 +3,16 @@ import { Injectable } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from '@env';
 import { Song } from '@models/interfaces/song.interface';
-import { Observable, map, retry } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map, retry } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SongsService {
   private readonly songsUrl: string = `${environment.baseApiUrl}songs`;
+  private readonly ytApi: string = `${environment.ytApi}`;
+
+  ytApiLoaded: boolean = false;
 
   constructor(private http: HttpClient, private sanitazer: DomSanitizer) {}
 
@@ -22,6 +25,15 @@ export class SongsService {
       // }),
       retry(2)
     );
+  }
+
+  initYtApi() {
+    if (!this.ytApiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = this.ytApi;
+      document.body.appendChild(tag);
+      this.ytApiLoaded = true;
+    }
   }
 
   getById(id: number): Observable<Song> {

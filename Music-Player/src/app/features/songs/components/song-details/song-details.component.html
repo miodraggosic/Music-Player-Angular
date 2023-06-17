@@ -5,8 +5,8 @@
         {{song.name | titlecase}}
       </a>
     </ng-container>
-    <video video controls [src]="song.videoUrl">
-    </video>
+    <app-song-video video [videoUrl]="song.videoUrl">
+    </app-song-video>
     <ng-container author>
       <p>{{song.description}}</p>
       <p>{{song.author | fullName}}</p>
