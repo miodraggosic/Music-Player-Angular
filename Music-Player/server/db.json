@@ -21,7 +21,7 @@
     {
       "id": 1,
       "name": "Firestarter",
-      "videoUrl": "https://youtu.be/Hb9hvRSEel8?t=8",
+      "videoUrl": "https://www.youtube.com/watch?v=Hb9hvRSEel8&t=8s&ab_channel=TheProdigy-Topic",
       "description": "The Fat of the Land is the third studio album by English electronic music group the Prodigy, released on 30 June 1997 through XL Recordings. The album received critical acclaim and topped the UK Albums Chart and the US Billboard 200. It has sold over 10 million copies worldwide as of 2019.",
       "author": {
         "firstName": "Band",
@@ -33,7 +33,7 @@
     {
       "id": 2,
       "name": "Move on Up",
-      "videoUrl": "https://youtu.be/iN3KsbnQZxU",
+      "videoUrl": "https://www.youtube.com/watch?v=iN3KsbnQZxU&ab_channel=CurtisMayfield-Topic",
       "description": "Super Fly is the third studio album by American soul musician Curtis Mayfield, released in July 1972 on Curtom Records. It was released as the soundtrack for the Blaxploitation film of the same name. Widely considered a classic of 1970s soul and funk music, Super Fly was a nearly immediate hit. Its sales were bolstered by two million-selling singles, \\\"Freddie's Dead\\\" and the title track. Super Fly is one of the few soundtracks to out-gross the film it accompanied.",
       "author": {
         "firstName": "Curtis",
@@ -53,6 +53,18 @@
       },
       "datePublished": "2023-06-15T16:33:20.224Z",
       "id": 4
+    },
+    {
+      "name": "Preach Honest",
+      "videoUrl": "https://www.youtube.com/watch?v=xarlMYPM9PE&list=LL&index=16&ab_channel=Marlowe-Topic",
+      "description": "Marlowe is a hip-hop duo from North Carolina comprising MC Solemn Brigham and producer L'Orange. They released their debut, self-titled album on Mello Music Group on July 13th, 2018. Their second collaborative studio album \"Marlowe 2\" was released on August 7th, 2020.",
+      "duration": "13:03:05",
+      "author": {
+        "firstName": "Marlowe",
+        "lastName": "LOrange"
+      },
+      "datePublished": "2023-06-17T10:24:18.334Z",
+      "id": 5
     }
   ],
   "navLinks": [
