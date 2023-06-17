@@ -11,6 +11,7 @@ import { Observable, take } from 'rxjs';
 export class SongFormComponent implements OnInit {
   @Output() formValue = new EventEmitter<Song>();
   @Input() setValue$?: Observable<Song> | null;
+
   songForm!: FormGroup;
 
   private validators = {
@@ -27,22 +28,25 @@ export class SongFormComponent implements OnInit {
     date: [Validators.required],
   };
 
-  constructor() {}
-
   ngOnInit(): void {
     this.createForm();
     this.updateForm();
   }
 
   onSubmit(): void {
-    this.formValue.emit(this.songForm.value);
+    const formValue = this.formatDuration();
+    this.formValue.emit(formValue);
   }
-  private createForm() {
+
+  private createForm(): void {
     this.songForm = new FormGroup({
       name: new FormControl('', this.validators.name),
       videoUrl: new FormControl('', this.validators.url),
       description: new FormControl('', this.validators.description),
-      duration: new FormControl('', this.validators.duration),
+      duration: new FormGroup({
+        minutes: new FormControl('', this.validators.duration),
+        seconds: new FormControl('', this.validators.duration),
+      }),
       author: new FormGroup({
         firstName: new FormControl('', this.validators.author),
         lastName: new FormControl('', this.validators.author),
@@ -54,9 +58,28 @@ export class SongFormComponent implements OnInit {
     });
   }
 
-  private updateForm() {
-    this.setValue$
-      ?.pipe(take(1))
-      .subscribe((data) => this.songForm.patchValue(data));
+  private updateForm(): void {
+    this.setValue$?.pipe(take(1)).subscribe((data) => {
+      this.songForm.patchValue({
+        ...data,
+        duration: {
+          minutes: data.duration.split(':')[0],
+          seconds: data.duration.split(':')[1],
+        },
+      });
+    });
+  }
+
+  get minutes() {
+    return this.songForm.get('duration')?.get('minutes')?.value;
+  }
+  get seconds() {
+    return this.songForm.get('duration')?.get('seconds')?.value;
+  }
+
+  private formatDuration(): Song {
+    const song = this.songForm.value;
+    song.duration = `${this.minutes}:${this.seconds}`;
+    return song;
   }
 }

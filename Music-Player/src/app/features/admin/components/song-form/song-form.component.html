@@ -11,10 +11,15 @@
     <mat-label for="description">Description</mat-label>
     <textarea matInput cols="10" rows="12" formControlName="description"></textarea>
   </mat-form-field>
-  <mat-form-field color="accent" appearance="outline">
-    <mat-label for="duration">Duration</mat-label>
-    <input matInput type="time" step="1" formControlName="duration">
-  </mat-form-field>
+  <ng-container formGroupName="duration">
+
+    <mat-label for="minutes">Minutes</mat-label>
+    <mat-slider formControlName="minutes" thumbLabel min="0" max="120"></mat-slider>
+
+    <mat-label for="seconds">Seconds</mat-label>
+    <mat-slider formControlName="seconds" thumbLabel min="0" max="60"></mat-slider>
+
+  </ng-container>
   <ng-container formGroupName="author">
     <mat-form-field color="accent" appearance="outline">
       <mat-label>Author First Name</mat-label>
