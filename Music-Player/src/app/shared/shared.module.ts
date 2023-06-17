@@ -9,8 +9,14 @@ import { SearchComponent } from './components/search/search.component';
 
 import { FullNamePipe } from './pipes/full-name.pipe';
 import { TextLengthPipe } from './pipes/text-length.pipe';
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
-const COMPONENTS = [SearchComponent, FullNamePipe, TextLengthPipe];
+const COMPONENTS = [
+  SearchComponent,
+  FullNamePipe,
+  TextLengthPipe,
+  FormatDatePipe,
+];
 
 @NgModule({
   declarations: [...COMPONENTS],
