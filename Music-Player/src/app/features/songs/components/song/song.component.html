@@ -1,4 +1,4 @@
-<app-song-card *ngIf="song">
+<app-song-card *ngIf="song" [duration]="song.duration">
   <ng-container title>
     <a mat-button color="warn" [routerLink]="[song.id]">
       {{song.name | titlecase}}
@@ -11,7 +11,7 @@
     <p>{{song.author | fullName}}</p>
   </ng-container>
   <ng-container info>
-    <p>{{song.duration }}</p>
+    <p>{{song.duration}}</p>
     <p>{{song.datePublished | formatDate}}</p>
   </ng-container>
 </app-song-card>

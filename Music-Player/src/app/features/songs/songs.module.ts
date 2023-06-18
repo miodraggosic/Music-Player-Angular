@@ -14,6 +14,7 @@ import { SongComponent } from './components/song/song.component';
 import { SongCardComponent } from './components/song-card/song-card.component';
 import { SongDetailsComponent } from './components/song-details/song-details.component';
 import { SongVideoComponent } from './components/song-video/song-video.component';
+import { CardColorDirective } from './directives/card-color.directive';
 
 const COMPONENTS = [
   SongsComponent,
@@ -21,6 +22,7 @@ const COMPONENTS = [
   SongComponent,
   SongDetailsComponent,
   SongVideoComponent,
+  CardColorDirective,
 ];
 
 @NgModule({
