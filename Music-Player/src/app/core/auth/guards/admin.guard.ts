@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad } from '@angular/router';
+import { CanActivate, CanLoad, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminGuard implements CanActivate, CanLoad {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
   canActivate(): boolean {
     return this.isAdmin();
   }
@@ -18,6 +18,7 @@ export class AdminGuard implements CanActivate, CanLoad {
     if (this.auth.isAdmin()) {
       return true;
     }
+    this.router.navigateByUrl('home');
     return false;
   }
 }
