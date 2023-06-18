@@ -5,29 +5,23 @@ import { SignUp, User } from '@models/interfaces/user.interface';
   providedIn: 'root',
 })
 export class AuthStorageService {
-  private readonly storageId = 'userId';
   private readonly storageToken = 'userToken';
   private readonly storageRole = 'userRole';
 
-  constructor() {}
-
   storeUser(res: any): void {
-    this.setKey(this.storageId, res.user.id);
     this.setKey(this.storageToken, res.accessToken);
     this.setKey(this.storageRole, res.user.role);
   }
+
   removeUser(): void {
-    this.removeKey(this.storageId);
     this.removeKey(this.storageToken);
     this.removeKey(this.storageRole);
   }
 
-  getUserId(): string {
-    return this.getKey(this.storageRole);
-  }
   getUserToken(): string {
     return this.getKey(this.storageToken);
   }
+
   getUserRole(): string {
     return this.getKey(this.storageRole);
   }
