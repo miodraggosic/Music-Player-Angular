@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Titles } from '@models/enums/titles.enum';
 import { Song } from '@models/interfaces/song.interface';
 
 @Component({
@@ -6,9 +7,12 @@ import { Song } from '@models/interfaces/song.interface';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
   @Input() songs: Song[] = [];
   @Output() songToDelete = new EventEmitter<number>();
+
+  titleText: string = Titles.LIBRARY;
+
   displayedColumns = [
     'row',
     'name',
@@ -19,10 +23,6 @@ export class TableComponent implements OnInit {
     'edit',
     'delete',
   ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
 
   songId(id: number): void {
     this.songToDelete.emit(id);
