@@ -35,7 +35,9 @@ export class SongFormComponent implements OnInit {
 
   onSubmit(): void {
     const formValue = this.formatDuration();
+
     this.formValue.emit(formValue);
+    this.songForm.reset();
   }
 
   private createForm(): void {
