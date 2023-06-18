@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-song-card',
@@ -6,5 +6,5 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./song-card.component.scss'],
 })
 export class SongCardComponent {
-  @Input() duration!: string;
+  @Input() duration?: string;
 }
