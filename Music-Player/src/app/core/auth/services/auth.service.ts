@@ -23,12 +23,9 @@ export class AuthService {
         console.log(res);
         if (res) {
           this.authStorage.storeUser(res);
-          console.log(this.isAdmin());
-
-          this.router.navigateByUrl('');
-          return true;
+          this.router.navigateByUrl('home/admin');
         }
-        return false;
+        return res;
       })
     );
   }
@@ -49,17 +46,16 @@ export class AuthService {
 
   logout(): void {
     this.authStorage.removeUser();
+    this.router.navigateByUrl('home');
   }
 
   isAdmin(): boolean {
     const userRole = this.authStorage.getUserRole();
-    console.log(userRole);
-
-    return userRole === 'admin' ? true : false;
+    return userRole === 'admin' || userRole === 'moderator' ? true : false;
   }
 
   isAuthenticated(): boolean {
-    return this.authStorage.getUserId() !== null;
+    return this.authStorage.getUserRole() !== null;
   }
 
   getUserToken(): string {
