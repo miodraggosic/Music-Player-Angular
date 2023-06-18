@@ -1,9 +1,12 @@
 <header>
   <mat-toolbar color="secondary">
     <span>{{title | uppercase}}</span>
-    <nav>
-      <a mat-stroked-button color="accent" *ngFor="let link of navLinks" [routerLink]="[link.path]">{{link.name}}
-      </a>
+    <nav *ngIf="navLinks">
+      <a mat-stroked-button color="accent" [routerLink]="[navLinks[0].path]">{{navLinks[0].name}}</a>
+      <a mat-stroked-button color="accent" *ngIf="admin" [routerLink]="[navLinks[1].path]">{{navLinks[1].name}}</a>
+      <a mat-stroked-button color="accent" *ngIf="logged" [routerLink]="[navLinks[2].path]">{{navLinks[2].name}}</a>
+      <a mat-stroked-button color="accent" *ngIf="logged" [routerLink]="[navLinks[3].path]">{{navLinks[3].name}}</a>
+      <a mat-stroked-button color="accent" *ngIf="!logged" (click)="logout()">Logout</a>
     </nav>
   </mat-toolbar>
 </header>
