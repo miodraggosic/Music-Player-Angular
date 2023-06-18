@@ -4,6 +4,7 @@ import { Buttons } from '@models/enums/buttons.enum';
 import { SignUp } from '@models/interfaces/user.interface';
 import { take } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { Titles } from '@models/enums/titles.enum';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,9 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
+  titleText: string = Titles.SIGNUP;
   buttonText: string = Buttons.SIGNUP;
+
   userForm: FormGroup = new FormGroup({
     firstName: new FormControl('', [
       Validators.required,

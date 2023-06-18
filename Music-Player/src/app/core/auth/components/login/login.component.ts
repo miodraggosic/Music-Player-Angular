@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Buttons } from '@models/enums/buttons.enum';
 import { take } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
+import { Titles } from '@models/enums/titles.enum';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  titleText: string = Titles.LOGIN;
   buttonText: string = Buttons.LOGIN;
 
   loginForm: FormGroup = new FormGroup({
