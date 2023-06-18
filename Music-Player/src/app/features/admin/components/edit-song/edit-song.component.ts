@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Titles } from '@models/enums/titles.enum';
 import { Song } from '@models/interfaces/song.interface';
 import { Observable, take } from 'rxjs';
 import { SongsService } from 'src/app/features/songs/services/songs.service';
@@ -10,6 +11,7 @@ import { SongsService } from 'src/app/features/songs/services/songs.service';
   styleUrls: ['./edit-song.component.scss'],
 })
 export class EditSongComponent implements OnInit {
+  titleText: string = Titles.EDITSONG;
   songToUpdate$!: Observable<Song>;
   song!: Song;
   songId!: number;

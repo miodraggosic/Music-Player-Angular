@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Titles } from '@models/enums/titles.enum';
 import { Song } from '@models/interfaces/song.interface';
 import { take } from 'rxjs';
 import { SongsService } from 'src/app/features/songs/services/songs.service';
@@ -8,10 +9,9 @@ import { SongsService } from 'src/app/features/songs/services/songs.service';
   templateUrl: './add-song.component.html',
   styleUrls: ['./add-song.component.scss'],
 })
-export class AddSongComponent implements OnInit {
+export class AddSongComponent {
+  titleText: string = Titles.NEWSONG;
   constructor(private songsService: SongsService) {}
-
-  ngOnInit(): void {}
 
   addSong(event: Song) {
     this.songsService
