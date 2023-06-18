@@ -7,8 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SongVideoComponent implements OnInit {
   @Input() videoUrl!: string;
+  @Input() videoSizeBig?: boolean;
 
   songId!: string;
+
+  height!: number;
+  width!: number;
 
   playerVars = {
     origin: 'http://localhost:4200',
@@ -18,9 +22,16 @@ export class SongVideoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSongId();
+    this.setPlayerSize();
   }
 
-  getSongId() {
+  private getSongId(): void {
     this.songId = this.videoUrl.split('v=')[1].split('&')[0];
+  }
+
+  private setPlayerSize() {
+    this.videoSizeBig
+      ? ((this.height = 720), (this.width = 1280))
+      : ((this.height = 270), (this.width = 480));
   }
 }

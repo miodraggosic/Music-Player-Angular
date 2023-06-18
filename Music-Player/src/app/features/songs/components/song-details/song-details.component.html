@@ -1,11 +1,11 @@
 <ng-container *ngIf="(song$ | async) as song">
-  <app-song-card>
+  <app-song-card [duration]="song.duration">
     <ng-container title>
       <a mat-button color="warn">
         {{song.name | titlecase}}
       </a>
     </ng-container>
-    <app-song-video video [videoUrl]="song.videoUrl">
+    <app-song-video [videoSizeBig]="true" video [videoUrl]="song.videoUrl">
     </app-song-video>
     <ng-container author>
       <p>{{song.description}}</p>
