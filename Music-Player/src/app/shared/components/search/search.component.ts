@@ -1,30 +1,47 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs';
+import {
+  Subject,
+  debounceTime,
+  distinctUntilChanged,
+  map,
+  takeUntil,
+} from 'rxjs';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
   @Output() searchTerm = new EventEmitter<string>();
 
   search: FormControl = new FormControl('');
 
-  constructor() {}
+  private unsubscribe$: Subject<void> = new Subject<void>();
 
   ngOnInit(): void {
-    console.log('init');
-    this.updateSearch();
+    this.onSearchTerm();
   }
 
-  private updateSearch() {
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  private onSearchTerm() {
     this.search.valueChanges
       .pipe(
         debounceTime(2000),
         map((value: string) => value.trim()),
-        distinctUntilChanged()
+        distinctUntilChanged(),
+        takeUntil(this.unsubscribe$)
       )
       .subscribe((term) => {
         if (term) {
