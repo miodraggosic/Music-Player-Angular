@@ -31,6 +31,6 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button [disabled]="!userForm.valid" (click)="onSubmit()">Register</button>
+    <button [disabled]="!userForm.valid" (click)="onSubmit()">{{buttonText}}</button>
   </mat-card-actions>
 </mat-card>

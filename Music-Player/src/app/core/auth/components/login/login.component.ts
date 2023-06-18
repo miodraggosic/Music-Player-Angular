@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Buttons } from '@models/enums/buttons.enum';
 import { take } from 'rxjs';
 import { AuthService } from '../../services/auth.service';
 
@@ -8,15 +9,15 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  buttonText: string = Buttons.LOGIN;
+
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
   constructor(private auth: AuthService) {}
-
-  ngOnInit(): void {}
 
   onSubmit() {
     console.log(this.loginForm.value);
