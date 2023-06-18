@@ -23,6 +23,14 @@
       "createdAt": "2023-06-17T15:14:13.232Z",
       "role": "admin",
       "id": 3
+    },
+    {
+      "email": "pera@gmail.com",
+      "password": "$2a$10$1y.9TUT5VpY9RNrvpQOnz.qf9G5.g6d4uyruKkDSfjW1WnLAxtazC",
+      "fullName": "Petar Petrovic",
+      "createdAt": "2023-06-18T18:02:17.232Z",
+      "role": "user",
+      "id": 4
     }
   ],
   "songs": [
@@ -51,18 +59,6 @@
       "datePublished": "2023-05-18T06:39:26.703Z"
     },
     {
-      "name": "Point And Kill feat Obongjayar",
-      "videoUrl": "https://www.youtube.com/watch?v=tvY31eN3gtE&ab_channel=LittleSimz",
-      "description": "Point And Kill featuring Obongjayar is taken from my new album 'Sometimes I Might Be Introvert'.",
-      "duration": "4:56",
-      "author": {
-        "firstName": "Little",
-        "lastName": "Simz "
-      },
-      "datePublished": "2023-06-15T16:33:20.224Z",
-      "id": 4
-    },
-    {
       "name": "Chekor",
       "videoUrl": "https://www.youtube.com/watch?v=kqiRCEtrNaE",
       "description": "Featuring: Petar Dimitrovski a.k.a Marc Purpose - keys (1-6), Vladan Drobicki - trombone & Vasko Bojadziski - sax (5)",
@@ -75,18 +71,6 @@
       "id": 5
     },
     {
-      "name": "Indijska ",
-      "videoUrl": "https://www.youtube.com/watch?v=9_TepCFoeb8&list=LL&index=58&ab_channel=MENART",
-      "description": "Album: Mostovi (Menart, 2015.)",
-      "duration": "6:17",
-      "author": {
-        "firstName": "Rundek Cargo Trio",
-        "lastName": "Band"
-      },
-      "datePublished": "2023-06-17T17:24:26.765Z",
-      "id": 6
-    },
-    {
       "name": "NPR Music Tiny Desk Concert",
       "videoUrl": "https://www.youtube.com/watch?v=bdneye4pzMw&list=LL&index=80&ab_channel=NPRMusic",
       "description": "July 10, 2019 | Josh Rogosin -- Sting and Shaggy might not be the most likely musical pairing. But one thing is certain, they love playing each other's music. On a bright autumn morning, the legends arrived at the NPR Music office bleary-eyed yet excited to play for the diverse staff of Shaggy and Sting fans. What surprised many of my NPR colleagues is just how well the collaboration works.",
@@ -97,6 +81,54 @@
       },
       "datePublished": "2023-06-17T22:52:50.470Z",
       "id": 7
+    },
+    {
+      "name": "JAMMING WITH REGGIE WATTS",
+      "videoUrl": "https://www.youtube.com/watch?v=Ro-ROkDpV_8&ab_channel=MarcRebillet",
+      "description": "Those of you who have been following me might know that my show wouldn’t exist without Reggie. Seeing him years ago was the whole reason I decided to try improvisational performance in the first place...getting to chill and make up some bullshit with him was quite literally a dream come true!! So grateful to him for letting me into his space; we made music for hours and had a wonderful time. I think it’s safe to say there’s more on the horizon. Stay tuned ",
+      "duration": "1:58",
+      "author": {
+        "firstName": "Marc",
+        "lastName": "Rebillet"
+      },
+      "datePublished": "2023-06-18T12:34:45.843Z",
+      "id": 8
+    },
+    {
+      "name": "The Inside Man",
+      "videoUrl": "https://www.youtube.com/watch?v=vYF_mYZ2_II&list=RDAR2ZOSC2ETI&index=6&ab_channel=timewarpmusic",
+      "description": "Funky Destination a.k.a Vladimir Sivc returns with a brand new release for Timewarp. Already counting one album and numerous ep's & singles during the past four years, he finally presents his next, highly anticipated, full length album! \"Revolution Is Only Solution\" presents 11 new well made funk tunes and songs plus two remixes on the song \"The Inside Man\" from great funksters Soopasoul and Valique.\nThis great album presents Funky Destination's musical skills that blend funk, soul, house and breaks with great party feeling and easy going funk grooves. Plus we agree with him regarding what the album title states: \"Revolution Is Only Solution\".",
+      "duration": "3:58",
+      "author": {
+        "firstName": "Funky ",
+        "lastName": "Destination"
+      },
+      "datePublished": "2023-06-18T13:04:10.700Z",
+      "id": 9
+    },
+    {
+      "name": "Supernova",
+      "videoUrl": "https://www.youtube.com/watch?v=hfbOOmXxhL0&list=RD7bl5gcGIbH8&index=23&ab_channel=djuza23",
+      "description": "Darkwood Dub was an art rock/electro rock band from Belgrade, Serbia.\nDarkwood Dub was formed in 1988, and gradually grew to prominence, and even cult status, in the Serbian alternative scene. Their music is characterized by gentle bass lines, a mixture of live drumming and electronic percussion, along with frequent use of slide guitar, synthesizers and samplers. The succinct and introspective lyrics are also a prominent feature, sung with offbeat vocal of Dejan Vučetić, the band's frontman and lyricist.",
+      "duration": "4:56",
+      "author": {
+        "firstName": "Darkwood ",
+        "lastName": "Dub"
+      },
+      "datePublished": "2023-06-18T13:21:16.963Z",
+      "id": 10
+    },
+    {
+      "name": "Roxanne ",
+      "videoUrl": "https://www.youtube.com/watch?v=lJ4wivcSKys&list=RDMM&start_radio=1&rv=ipYGL3jFXfQ&ab_channel=BrothersMoving",
+      "description": "Brothers Moving performing their rendition of 'Roxanne' by The Police, live in Grand Canyon National Park, USA.",
+      "duration": "4:4",
+      "author": {
+        "firstName": "Brothers Moving",
+        "lastName": "Moving"
+      },
+      "datePublished": "2023-06-18T13:26:02.760Z",
+      "id": 11
     }
   ],
   "navLinks": [
