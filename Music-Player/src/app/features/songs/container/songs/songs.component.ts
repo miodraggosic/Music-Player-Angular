@@ -12,6 +12,9 @@ export class SongsComponent implements OnInit {
   @Input() searchTerm: string = '';
   songs: Song[] = [];
 
+  show: boolean = true;
+  showButton: boolean = false;
+
   constructor(private songsService: SongsService) {}
 
   ngOnInit(): void {
@@ -24,11 +27,11 @@ export class SongsComponent implements OnInit {
     this.getFiltered();
   }
 
-  private getAllSongs(): void {
+  getAllSongs(): void {
     this.songsService
       .getAllSongs()
       .pipe(take(1))
-      .subscribe((data) => (this.songs = data));
+      .subscribe((data) => ((this.songs = data), (this.showButton = false)));
   }
 
   private getFiltered() {
@@ -36,9 +39,18 @@ export class SongsComponent implements OnInit {
       .getFiltered(this.searchTerm)
       .pipe(take(1))
       .subscribe((data) => {
-        console.log(data);
-
-        this.songs = data;
+        if (!!data.length) {
+          console.log(data);
+          this.songs = data;
+          this.showButton = true;
+          return;
+        }
+        this.showMessage();
       });
+  }
+
+  private showMessage(): void {
+    this.show = !this.show;
+    setTimeout(() => (this.show = !this.show), 3000);
   }
 }
