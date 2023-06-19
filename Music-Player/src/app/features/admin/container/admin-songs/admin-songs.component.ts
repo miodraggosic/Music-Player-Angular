@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Buttons } from '@models/enums/buttons.enum';
+import { Titles } from '@models/enums/titles.enum';
 import { Song } from '@models/interfaces/song.interface';
 import { take } from 'rxjs';
 import { SongsService } from 'src/app/features/songs/services/songs.service';
@@ -10,6 +12,8 @@ import { SongsService } from 'src/app/features/songs/services/songs.service';
 })
 export class AdminSongsComponent implements OnInit {
   songs: Song[] = [];
+  buttonText: string = Buttons.NEWSONG;
+  titleText: string = Titles.LIBRARY;
 
   constructor(private songsService: SongsService) {}
 

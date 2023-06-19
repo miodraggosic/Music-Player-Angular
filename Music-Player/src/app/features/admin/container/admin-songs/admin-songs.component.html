@@ -1,2 +1,3 @@
+<app-title [text]="titleText"></app-title>
 <app-table [songs]="songs" (songToDelete)="deleteSong($event)"></app-table>
-<button routerLink="addSong">New Song</button>
+<app-button [text]="buttonText" routerLink="addSong"></app-button>
