@@ -19,11 +19,12 @@ export class CardColorDirective implements OnInit {
       this.elementRef.nativeElement.style.backgroundColor = 'green';
       return;
     } else if (songDuration > 240) {
-      this.elementRef.nativeElement.style.backgroundColor = 'white';
+      this.elementRef.nativeElement.style.backgroundColor = '#f4f3ee';
       this.elementRef.nativeElement.style.color = 'black';
       return;
     } else {
       this.elementRef.nativeElement.style.backgroundColor = 'lightblue';
+      this.elementRef.nativeElement.style.color = 'black';
     }
   }
 
