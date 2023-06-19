@@ -1,6 +1,6 @@
 <header>
-  <mat-toolbar color="secondary">
-    <span>{{title | uppercase}}</span>
+  <mat-toolbar>
+    <app-logo></app-logo>
     <nav *ngIf="navLinks">
       <a mat-stroked-button color="accent" [routerLink]="[navLinks[0].path]">{{navLinks[0].name}}</a>
       <a mat-stroked-button color="accent" *ngIf="admin" [routerLink]="[navLinks[1].path]">{{navLinks[1].name}}</a>

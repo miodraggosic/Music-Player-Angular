@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
@@ -16,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
+import { LogoComponent } from './components/logo/logo.component';
 
 const COMPONENTS = [
   HomeLayoutComponent,
@@ -25,6 +27,7 @@ const COMPONENTS = [
   PageNotFoundComponent,
   LoginComponent,
   SignupComponent,
+  LogoComponent,
 ];
 
 @NgModule({
@@ -36,6 +39,8 @@ const COMPONENTS = [
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
+    MatButtonModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
   ],
