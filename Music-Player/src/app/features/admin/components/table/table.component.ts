@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Titles } from '@models/enums/titles.enum';
 import { Song } from '@models/interfaces/song.interface';
 
 @Component({
@@ -10,8 +9,6 @@ import { Song } from '@models/interfaces/song.interface';
 export class TableComponent {
   @Input() songs: Song[] = [];
   @Output() songToDelete = new EventEmitter<number>();
-
-  titleText: string = Titles.LIBRARY;
 
   displayedColumns = [
     'row',
