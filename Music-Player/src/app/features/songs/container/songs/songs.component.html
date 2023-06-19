@@ -1,10 +1,11 @@
 <div class="search">
-  <button (click)="getAllSongs()" *ngIf="showButton">Back to All Songs</button>
+  <button mat-fab color="accent" (click)="getAllSongs()"
+    *ngIf="showButton"><mat-icon>keyboard_backspace</mat-icon></button>
   <app-search (searchTerm)="onSearchTerm($event)"></app-search>
 </div>
 <div class="songs-container" *ngIf="show; else noResult ">
   <app-song *ngFor="let song of songs" [song]="song"></app-song>
 </div>
 <ng-template #noResult>
-  <h3>No song</h3>
+  <p class="message">This item does not exist</p>
 </ng-template>
