@@ -17,14 +17,7 @@ export class SongsService {
   constructor(private http: HttpClient, private sanitazer: DomSanitizer) {}
 
   getAllSongs(): Observable<Song[]> {
-    return this.http.get<Song[]>(this.songsUrl).pipe(
-      // map((data) => {
-      //   data.map((song) => (song.videoUrl = this.sanitazeUrl(song.videoUrl)));
-      //   console.log(data);
-      //   return data;
-      // }),
-      retry(2)
-    );
+    return this.http.get<Song[]>(this.songsUrl).pipe(retry(2));
   }
 
   initYtApi() {
