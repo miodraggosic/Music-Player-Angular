@@ -1,17 +1,17 @@
 <app-song-card *ngIf="song" [duration]="song.duration">
   <ng-container title>
-    <a mat-button color="warn" [routerLink]="[song.id]">
+    <a [routerLink]="[song.id]">
       {{song.name | titlecase}}
     </a>
   </ng-container>
-  <app-song-video video [videoUrl]="song.videoUrl"></app-song-video>
-
   <ng-container author>
-    <p>{{song.description | textLength}}</p>
     <p>{{song.author | fullName}}</p>
   </ng-container>
+  <app-song-video video [videoUrl]="song.videoUrl"></app-song-video>
   <ng-container info>
-    <p>{{song.duration}}</p>
-    <p>{{song.datePublished | formatDate}}</p>
+    <p class="description">{{song.description | textLength}}</p>
+    <span>{{song.duration}}</span><button mat-mini-fab color="accent"><mat-icon>access_time</mat-icon></button>
+    <span>{{song.datePublished | formatDate}}</span><button mat-mini-fab
+      color='warn'><mat-icon>insert_invitation</mat-icon></button>
   </ng-container>
 </app-song-card>

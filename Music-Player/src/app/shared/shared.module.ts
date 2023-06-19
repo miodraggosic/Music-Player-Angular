@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 import { SearchComponent } from './components/search/search.component';
 import { TitleComponent } from './components/title/title.component';
@@ -29,6 +30,7 @@ const COMPONENTS = [
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatButtonModule,
   ],
   exports: [...COMPONENTS],
 })

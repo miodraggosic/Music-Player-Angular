@@ -7,6 +7,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 
 import { AddSongComponent } from './components/add-song/add-song.component';
@@ -32,6 +33,7 @@ const COMPONENTS = [
     AdminRoutingModule,
     MatTableModule,
     MatIconModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatSliderModule,
