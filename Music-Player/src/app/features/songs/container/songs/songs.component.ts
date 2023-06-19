@@ -40,7 +40,6 @@ export class SongsComponent implements OnInit {
       .pipe(take(1))
       .subscribe((data) => {
         if (!!data.length) {
-          console.log(data);
           this.songs = data;
           this.showButton = true;
           return;
@@ -50,7 +49,11 @@ export class SongsComponent implements OnInit {
   }
 
   private showMessage(): void {
+    this.toggleShow();
+    setTimeout(() => this.toggleShow(), 3000);
+  }
+
+  private toggleShow(): void {
     this.show = !this.show;
-    setTimeout(() => (this.show = !this.show), 3000);
   }
 }
