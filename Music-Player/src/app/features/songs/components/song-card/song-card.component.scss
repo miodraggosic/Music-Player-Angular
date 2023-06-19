@@ -1,0 +1,22 @@
+@import "../../../../../assets/styles/variables.scss";
+.mat-card {
+  .mat-card-header {
+    display: block;
+    width: 100%;
+
+    .mat-card-title {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      p {
+        display: inline;
+      }
+    }
+  }
+  .mat-card-content {
+    text-align: center;
+  }
+  .mat-card-actions {
+    text-align: center;
+  }
+}

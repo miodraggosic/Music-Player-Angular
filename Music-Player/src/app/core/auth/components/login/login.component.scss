@@ -1,0 +1,11 @@
+@import "../../../../../assets/styles/variables.scss";
+
+@include user-form;
+:host {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-end;
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
+}

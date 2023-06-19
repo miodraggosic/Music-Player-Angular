@@ -1,9 +1,28 @@
+@import "../../../../../assets/styles/variables.scss";
 :host {
-  background: #365c467a;
+  background-image: url(../../../../../assets/images/headphones.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .mat-fab {
+      margin-right: 20px;
+    }
+  }
 
   .songs-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+  }
+  .message {
+    margin: 30px;
+    text-align: center;
+    font-size: 26px;
+    color: $white;
   }
 }

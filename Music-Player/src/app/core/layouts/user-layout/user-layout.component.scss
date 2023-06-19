@@ -1,0 +1,10 @@
+:host {
+  display: grid;
+  height: -webkit-fill-available;
+  grid-template-rows: auto auto 1fr auto;
+
+  background-image: url(../../../../assets/images/wall.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
