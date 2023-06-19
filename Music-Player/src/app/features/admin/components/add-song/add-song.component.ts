@@ -14,9 +14,6 @@ export class AddSongComponent {
   constructor(private songsService: SongsService) {}
 
   addSong(event: Song) {
-    this.songsService
-      .add(event)
-      .pipe(take(1))
-      .subscribe((data) => console.log(data));
+    this.songsService.add(event).pipe(take(1)).subscribe();
   }
 }

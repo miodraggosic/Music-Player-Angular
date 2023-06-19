@@ -31,10 +31,7 @@ export class EditSongComponent implements OnInit {
   }
 
   updateSong(event: Song) {
-    this.songsService
-      .update(this.songId, event)
-      .pipe(take(1))
-      .subscribe((data) => console.log(data));
+    this.songsService.update(this.songId, event).pipe(take(1)).subscribe();
   }
 
   private getRouteId(): void {

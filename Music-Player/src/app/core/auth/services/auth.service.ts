@@ -17,10 +17,8 @@ export class AuthService {
   ) {}
 
   login(user: Login): Observable<boolean> {
-    console.log(user);
     return this.http.post<Login>(`${environment.baseApiUrl}login`, user).pipe(
       map((res: any) => {
-        console.log(res);
         if (res) {
           this.authStorage.storeUser(res);
           this.router.navigateByUrl('home/admin');
@@ -36,7 +34,6 @@ export class AuthService {
       .post<User>(`${environment.baseApiUrl}users`, createUser)
       .pipe(
         tap((res: any) => {
-          console.log(res);
           if (res) {
             this.router.navigateByUrl('user/login');
           }

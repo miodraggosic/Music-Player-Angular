@@ -22,9 +22,7 @@ export class AdminSongsComponent implements OnInit {
   }
 
   deleteSong(event: number) {
-    console.log(event);
-    this.songsService.delete(event).subscribe((data) => {
-      console.log(data);
+    this.songsService.delete(event).subscribe(() => {
       this.getSongs();
     });
   }
