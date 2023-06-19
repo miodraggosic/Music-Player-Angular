@@ -6,6 +6,7 @@ import { SongsRoutingModule } from './songs-routing.module';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 import { YouTubePlayerModule } from '@angular/youtube-player';
 
@@ -32,6 +33,7 @@ const COMPONENTS = [
     SongsRoutingModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
     SharedModule,
     YouTubePlayerModule,
   ],
