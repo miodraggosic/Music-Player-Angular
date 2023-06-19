@@ -31,7 +31,7 @@ export class SongVideoComponent implements OnInit {
 
   private setPlayerSize() {
     this.videoSizeBig
-      ? ((this.height = 720), (this.width = 1280))
-      : ((this.height = 270), (this.width = 480));
+      ? ((this.height = 540), (this.width = 960))
+      : ((this.height = 250), (this.width = 460));
   }
 }
