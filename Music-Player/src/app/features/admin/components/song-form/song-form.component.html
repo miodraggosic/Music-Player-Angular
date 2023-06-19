@@ -1,13 +1,13 @@
 <form [formGroup]="songForm" (ngSubmit)="onSubmit()">
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" color="accent">
     <mat-label for="name">Name</mat-label>
     <input type="text" name="title" id="title" matInput formControlName="name">
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" color="accent">
     <mat-label for="videoUrl">VideoUrl</mat-label>
     <input type="text" matInput formControlName="videoUrl">
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" color="accent">
     <mat-label for="description">Description</mat-label>
     <textarea matInput cols="10" rows="12" formControlName="description"></textarea>
   </mat-form-field>
@@ -25,12 +25,12 @@
       <mat-label>Author First Name</mat-label>
       <input matInput type="text" formControlName="firstName">
     </mat-form-field>
+
     <mat-form-field color="accent" appearance="outline">
       <mat-label>Author Last Name</mat-label>
       <input matInput type="text" formControlName="lastName">
     </mat-form-field>
   </ng-container>
 
-
-  <button type="submit" [disabled]="songForm.invalid">Add</button>
+  <button mat-raised-button color="accent" type="submit" [disabled]="songForm.invalid">Submit</button>
 </form>
